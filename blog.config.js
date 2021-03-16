@@ -13,7 +13,7 @@ const BLOG = {
   socialLink: 'https://twitter.com/craigaryhart',
   seo: {
     keywords: ['Blog', 'Website', 'Notion'],
-    googleSiteVerification: '44BYh2dDz2y4hTfmgrhM3SGE4Q-kl-twbkgO5nyGFOo' // Remove the value or replace it with your own google site verification code
+    googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   },
   notionApiEndPoint: process.env.NOTION_API_ENDPOINT,
   notionPageId: process.env.NOTION_PAGE_ID
