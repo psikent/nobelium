@@ -4,6 +4,15 @@ import { useRouter } from 'next/router'
 import { NotionRenderer } from 'react-notion'
 import BLOG from '@/blog.config'
 import formatDate from '@/lib/formatDate'
+import dynamic from 'next/dynamic'
+import 'gitalk/dist/gitalk.css'
+
+const GitalkComponent = dynamic(
+  () => {
+    return import('gitalk/dist/gitalk-component')
+  },
+  { ssr: false }
+)
 
 const BlogLayout = ({ children, blockMap, frontMatter }) => {
   const router = useRouter()
@@ -62,6 +71,18 @@ const BlogLayout = ({ children, blockMap, frontMatter }) => {
           ↑ Top
         </p>
       </div>
+      {BLOG.comment && BLOG.comment.provider === 'gitalk' && (
+        <GitalkComponent options={{
+          id: frontMatter.id,
+          title: frontMatter.title,
+          clientID: BLOG.comment.gitalkConfig.clientID,
+          clientSecret: BLOG.comment.gitalkConfig.clientSecret,
+          repo: BLOG.comment.gitalkConfig.repo,
+          owner: BLOG.comment.gitalkConfig.owner,
+          admin: BLOG.comment.gitalkConfig.admin,
+          distractionFreeMode: BLOG.comment.gitalkConfig.distractionFreeMode
+        }} />
+      )}
     </Container>
   )
 }

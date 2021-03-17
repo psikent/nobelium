@@ -15,8 +15,18 @@ const BLOG = {
     keywords: ['Blog', 'Website', 'Notion'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   },
-  notionApiEndPoint: process.env.NOTION_API_ENDPOINT,
-  notionPageId: process.env.NOTION_PAGE_ID
+  notionPageId: process.env.NOTION_PAGE_ID,
+  comment: { // support provider: gitalk
+    provider: '', // leave it empty if you don't need any comment plugin
+    gitalkConfig: {
+      repo: '', // The repository of store comments
+      owner: '',
+      admin: [],
+      clientID: '',
+      clientSecret: '',
+      distractionFreeMode: false
+    }
+  }
 }
 
 export default BLOG
