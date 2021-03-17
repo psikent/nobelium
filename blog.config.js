@@ -1,16 +1,16 @@
 const BLOG = {
-  title: 'test',
+  title: '一往无前',
   author: 'Jason Lau',
-  email: 'i@craigary.net',
+  email: 'lxjsilver@gmail.com',
   link: 'https://nobelium.vercel.app',
-  description: 'This gonna be an awesome website.',
+  description: '路漫漫其修远兮，吾将上下而求索。',
   lang: 'en-US',
   path: '', // leave this empty unless you want to deploy Nobelium in a folder
   since: 2021, // if leave this empty, current year will be used.
   postsPerPage: 7,
   showAbout: true, // WIP
   showArchive: true, // WIP
-  socialLink: 'https://twitter.com/craigaryhart',
+  socialLink: 'https://twitter.com/i_lxj',
   seo: {
     keywords: ['Blog', 'Website', 'Notion'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
